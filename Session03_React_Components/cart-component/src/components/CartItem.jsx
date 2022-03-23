@@ -14,6 +14,10 @@ class CartItem extends Component {
 		if (this.state.count > 0) this.setState({ count: this.state.count - 1 });
 	};
 
+	componentWillUnmount() {
+		console.log('component will unmount');
+	}
+
 	render() {
 		return (
 			<div>
