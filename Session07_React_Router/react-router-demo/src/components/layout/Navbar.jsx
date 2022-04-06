@@ -7,17 +7,26 @@ const Navbar = () => {
 		<div className="navbar">
 			<ul>
 				<li>
-					<NavLink activeClassName="active" to="/register">
+					<NavLink
+						className={(navData) => (navData.isActive ? 'active' : '')}
+						to="/register"
+					>
 						Register
 					</NavLink>
 				</li>
 				<li>
-					<NavLink activeClassName="active" to="/login">
+					<NavLink
+						className={(navData) => (navData.isActive ? 'active' : '')}
+						to="/login"
+					>
 						Login
 					</NavLink>
 				</li>
 				<li>
-					<NavLink activeClassName="active" to="/posts">
+					<NavLink
+						className={(navData) => (navData.isActive ? 'active' : '')}
+						to="/posts"
+					>
 						Posts
 					</NavLink>
 				</li>

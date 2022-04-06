@@ -1,5 +1,5 @@
 import './App.css';
-import { Route, Switch, Redirect } from 'react-router-dom';
+import { Route, Routes, Navigate } from 'react-router-dom';
 import Register from './components/auth/Register';
 import Login from './components/auth/Login';
 import Posts from './components/posts/Posts';
@@ -10,23 +10,13 @@ function App() {
 	return (
 		<div className="App">
 			<Navbar />
-			<Switch>
-				<Route path="/" exact>
-					<Redirect to="/register" />
-				</Route>
-				<Route path="/register">
-					<Register />
-				</Route>
-				<Route path="/login">
-					<Login />
-				</Route>
-				<Route path="/posts" exact>
-					<Posts />
-				</Route>
-				<Route path="/posts/:postId">
-					<PostPage />
-				</Route>
-			</Switch>
+			<Routes>
+				<Route path="/" element={<Navigate to="/register" />} />
+				<Route path="/register" element={<Register />} />
+				<Route path="/login" element={<Login />} />
+				<Route path="/posts" element={<Posts />} />
+				<Route path="/posts/:postId" element={<PostPage />} />
+			</Routes>
 		</div>
 	);
 }
