@@ -1,0 +1,10 @@
+/* .navbar a:hover,
+.navbar a:active, */
+.active {
+	color: brown;
+	border-bottom: 4px solid brown;
+}
+
+.navbar a {
+	text-decoration: none;
+}
